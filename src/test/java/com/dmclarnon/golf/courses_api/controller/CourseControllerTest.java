@@ -55,21 +55,20 @@ class CourseControllerTest {
         /** Minimal stub with the expected method signature used by SpEL. */
         static class OwnershipGuard {
             public boolean canModifyCourse(Long id, Authentication authentication) {
-                return true; // allow in tests unless you want to simulate false
+                return true;
             }
         }
     }
 
     @BeforeEach
     void setUp() {
-        // Match your CourseResponse record signature exactly
         sampleCourse = new CourseResponse(
                 1L,
                 "Augusta National",
                 "GA, USA",
                 18,
                 72,
-                "declan",         // ownerUsername
+                "declan",
                 List.of(),        // holesDetail
                 List.of()         // teeSets
         );
